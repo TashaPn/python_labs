@@ -1,4 +1,4 @@
-print("НОМЕР 2.СУММА И СРЕДНЕЕ")
+print("НОМЕР 2: СУММА И СРЕДНЕЕ")
 a = input()
 b = input()
 if a.count(",")==1:
@@ -9,5 +9,5 @@ a1 = float(a)
 b1 = float(b)
 summ = a1+b1
 avg = summ/2
-print("sum =",summ,";avg =",avg)
+print("sum =",f"{summ:.2f}",";avg =",f"{avg:.2f}")
 
