@@ -165,4 +165,4 @@ test_flatten_error()
 
 ```
 
-![](images/Lab_02/TESTS_1.png "блок A")
+![](/images/Lab_02/TESTS_1.png "блок A")
