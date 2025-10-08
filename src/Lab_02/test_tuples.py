@@ -36,25 +36,25 @@ def test_format_record_value_error():
     try:
         format_record(("", 'IKBO-12', 5.0))
     except ValueError:
-        print("test passed: value error")
+        print("Test Passed: value error")
     else:
-        print("test failed: value error")
+        print("Test Failed: value error")
 
     try:
         format_record(("Иванов Иван Иванович", '', 5.0))
     except ValueError:
-        print("test passed: value error")
+        print("Test Passed: value error")
     else:
-        print("test failed: value error")
+        print("Test Failed: value error")
 
 
 def test_format_record_type_error():
     try:
         format_record(("Иванов Иван Иванович", 'IKBO-12', "5.0"))
     except TypeError:
-        print("test passed: type error")
+        print("Test Passed: type error")
     else:
-        print("test failed: type error")
+        print("Test Failed: type error")
 
 
 print("TEST FORMAT-RECORD")
