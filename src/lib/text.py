@@ -15,3 +15,24 @@ def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
 def tokenize(text: str) -> list[str]:
     return re.findall("[\w-]+", text)
 
+def count_freq(tokens: list[str]) -> dict[str, int]:
+    result = {}
+
+    for token in tokens:
+        if token in result:
+            result[token]+=1
+        else:
+            result[token]=1
+
+    return result
+
+
+def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
+    result = []
+    for key in freq:
+        value = freq[key]
+        element = (key, value)
+        result.append(element)
+    result = sorted(result, reverse=True, key=lambda n: n[1])[:n]
+
+    return result
