@@ -1,11 +1,16 @@
-import sys
-import csv
+from pathlib import Path
 
-def read_text():
-    return sys.stdin.read()     # ввод через эхо
 
-def write_csv(data):
-    writer = csv.writer(sys.stdout)         # записывает в консоль в формате csv
-    writer.writerow(['word', 'count'])      # также записывает но списком (в два столбика)
-    for word, count in data:                # создает для каждого слова отдельную строку
-        writer.writerow([word, count])
+def read_text(path: str | Path, encoding: str = "utf-8") -> str:
+
+    file_data = ""
+    with open(file=path, mode="r", encoding=encoding) as fp:
+        file_data = fp.read()
+        return file_data
+    
+
+print(read_text(encoding="koi8-r", path="src/test_data/1-koi8-r.txt"))
+print("="*20)
+print(read_text("src/test_data/1-cp1251.txt", "cp1251"))
+print("="*20)
+print(read_text("src/test_data/1.txt"))
