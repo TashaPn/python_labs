@@ -73,20 +73,28 @@ def top_n(freq: dict[str, int], n: int = 5) -> list[tuple[str, int]]:
 
 ## Задание B
 ```python
+import sys 
+
 from lib.text import *
 
-a = input()
+
+a = sys.stdin.read()
 
 norm = normalize(a)
 token = tokenize(norm)
-print("Всего слов:",len(token))
+print("Всего слов:", len(token))
+
 count = count_freq(token)
-print("Уникальных слов:",len(count))
+print("Уникальных слов:", len(count))
+
 top = top_n(count)
 print("Топ-5:")
 
+
 for element in top:
-    print(element[0],":",element[1])
+    print(element[0], ":", element[1])
+
 ```
 
-![](/images/Lab_03/task_B.png "задание_B")
+![](/images/Lab_03/number_B.png "задание_B")
+![](/images/Lab_03/number_B2.png "задание_B")
