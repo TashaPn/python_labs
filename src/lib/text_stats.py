@@ -1,6 +1,8 @@
+import sys 
 from lib.text import *
+import re 
 
-a = input()
+a = sys.stdin.read().strip()
 
 norm = normalize(a)
 token = tokenize(norm)
