@@ -1,9 +1,9 @@
 import sys 
+
 from lib.text import *
-import re 
+
 
 a = sys.stdin.read().strip()
-
 norm = normalize(a)
 token = tokenize(norm)
 print("Всего слов:",len(token))
