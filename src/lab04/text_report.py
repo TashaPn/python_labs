@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from lib.io_txt_csv import read_text
+from lab04.io_txt_csv import read_text
 from lib.text import *
 
 
@@ -20,4 +20,4 @@ def text_report(path: str | Path):
     for element in top:
         print(element[0], ":", element[1])
     
-text_report("src/data/input.txt")
+text_report("data/lab04/input.txt")
