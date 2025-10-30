@@ -1,7 +1,7 @@
 import csv
+
 from pathlib import Path
-from typing import Iterable, Sequence
-from pathlib import Path
+
 
 
 def read_text(path: str | Path, encoding: str = "utf-8") -> str:
@@ -9,6 +9,7 @@ def read_text(path: str | Path, encoding: str = "utf-8") -> str:
     Открыть файл на чтение в указанной кодировке и вернуть содержимое как одну строку 
     + обработка ошибок + возможность выбора кодировки
     """
+    p = Path(path)
 
     file_data = ""
     with open(file=path, mode="r", encoding=encoding) as fp:
@@ -23,7 +24,6 @@ def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...
     """
      
     p = Path(path)
-    rows = list(rows)
     
     if rows:
         expected_length = len(rows[0])
