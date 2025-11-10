@@ -1,9 +1,12 @@
 import json
+import csv
+
 from lab04.io_txt_csv import write_csv
+from pathlib import Path
 
 from pathlib import Path
 
-def convert(j: list) -> list:
+def convert_json_to_csv(j: list) -> list:
     """
     Переводит данные, которые считали из json в формат для csv
     """
@@ -37,6 +40,42 @@ def convert(j: list) -> list:
  
     return result
 
+def convert_csv_to_json(csv_input:list)-> list:
+    """
+    csv_input - массив массивов, например:
+    
+    csv_input = [
+    ["33","22","11"],
+    ["3","2","1"],
+    ["один", "два", "три"]
+    ]
+    
+    в таком примере, result будет таким:
+    
+    result = [
+    {"33": "3",
+     "22": "2",
+     "11": "1",
+    },
+    {"33": "один",
+     "22": "два",
+     "11": "один"
+    },
+    ]
+    """
+    result = [] #конвертированный файл
+    stolbiki = csv_input[0]  #  ["33","22","11"]
+
+    slovar = {}                         # пустой
+    
+    for strochka in csv_input[1:]:      # ["3","2","1"] потом ["один", "два", "три"]
+        slovar = {}
+        for i in range(len(strochka)):   
+            slovar[stolbiki[i]] = strochka[i] 
+        
+        result.append(slovar)
+
+    return result
 
 def json_to_csv(json_path: str, csv_path: str) -> None:
     """
@@ -60,9 +99,26 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
         raise ValueError("Пустой JSON или неподдерживаемая структура")
     
     
-    massive = convert(json_f)
+    massive = convert_json_to_csv(json_f)
     write_csv(massive, csv_path)
 
 
-json_to_csv("data/lab05/samples/people_invalid.json","data/lab05/persons2.csv")
+def csv_to_json(csv_path: str, json_path: str) -> None:
+    """
+    """
+    p = Path(csv_path)
+    r = Path(json_path)
+    fp = p.open('r')
+    rf = r.open('w')
+    csv_input = csv.reader(fp)
+
+    result = [] 
+
+    for i in csv_input:
+        result.append(i)
+
+    slovar = convert_csv_to_json(result)
+
+    json.dump(slovar, rf, indent=2)
+
 
