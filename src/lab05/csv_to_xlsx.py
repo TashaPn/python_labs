@@ -23,6 +23,9 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     for i in csv_input:
         result.append(i)
 
+    if len(result)==0:
+        raise ValueError
+    
     wb = Workbook()
     ws = wb.active
     ws.title = "Sheet1"

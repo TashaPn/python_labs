@@ -98,8 +98,12 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
     except json.decoder.JSONDecodeError:
         raise ValueError("Пустой JSON или неподдерживаемая структура")
     
+    massive = None
+    try:
+        massive = convert_json_to_csv(json_f)
+    except:
+        raise ValueError
     
-    massive = convert_json_to_csv(json_f)
     write_csv(massive, csv_path)
 
 
@@ -116,8 +120,14 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
 
     for i in csv_input:
         result.append(i)
+    
+    if len(result)==0:
+        raise ValueError
 
-    slovar = convert_csv_to_json(result)
+    try:
+        slovar = convert_csv_to_json(result)
+    except:
+        raise ValueError
 
     json.dump(slovar, rf, indent=2)
 
