@@ -1,5 +1,5 @@
 * [Лабораторная работа 1 :heart:](src/lab01/README.md)
 * [Лабораторная работа 2 :two_hearts:](src/lab02/README.md)
-* [Лабораторная работа 3 :blue_heart:](src/lab03/README.md)
-* [Лабораторная работа 4 :purple_heart:](src/lab04/README.md)
-* [Лабораторная работа 4 :yellow_heart:](src/lab04/README.md)
+* [Лабораторная работа 3 :heartpulse:](src/lab03/README.md)
+* [Лабораторная работа 4 :sparkling_heart:](src/lab04/README.md)
+* [Лабораторная работа 4 :revolving_hearts:](src/lab04/README.md)
