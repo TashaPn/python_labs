@@ -3,12 +3,12 @@ import pytest
 from src.lab06.cli_text import *
 from src.lab06.cli_convert import *
 
-def test_cat():
+def test_cat():             #проверка подкаманд функции main1
     main1()
 
 def test_stats():
     main1()
-
+ 
 def test_json2csv():
     main2()
 
