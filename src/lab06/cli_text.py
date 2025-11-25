@@ -18,7 +18,7 @@ def main():
     stats_parser.add_argument("--top", type=int, dest="number", default=5)
 
     args = parser.parse_args()
-    print(args)
+   
     
     if args.command == "cat":
         """ Реализация команды cat """

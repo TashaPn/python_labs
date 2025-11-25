@@ -3,3 +3,4 @@
 * [Лабораторная работа 3 :heartpulse:](src/lab03/README.md)
 * [Лабораторная работа 4 :sparkling_heart:](src/lab04/README.md)
 * [Лабораторная работа 5 :revolving_hearts:](src/lab05/README.md)
+* [Лабораторная работа 6 :cherry_blossom:](src/lab06/README.md)

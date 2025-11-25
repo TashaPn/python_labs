@@ -16,6 +16,7 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     p = Path(csv_path)
     fp = p.open('r')
 
+
     csv_input = csv.reader(fp)
 
     result = []

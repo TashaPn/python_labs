@@ -90,8 +90,10 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
     p = Path(json_path)
 
     # Загрузка напрямую из файла    
+
     fp = p.open("r", encoding= "utf-8")
 
+    
     json_f = None
     try:
         json_f = json.load(fp)
