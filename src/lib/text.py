@@ -1,5 +1,6 @@
 import re
 
+
 def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     """
     Преобразование строки s в norm(s):
@@ -7,8 +8,8 @@ def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     if casefold:
         text = text.casefold()
     if yo2e:
-        text = text.replace("ё","е").replace("Ё","Е")
-    text = text.replace("\r"," ").replace("\t"," ")
+        text = text.replace("ё", "е").replace("Ё", "Е")
+    text = text.replace("\r", " ").replace("\t", " ")
     text = text.strip()
     text = text.split()
     text = " ".join(text)
@@ -21,6 +22,7 @@ def tokenize(text: str) -> list[str]:
     """
     return re.findall("[\w-]+", text)
 
+
 def count_freq(tokens: list[str]) -> dict[str, int]:
     """
     Для списка токенов T = [t₁, …, tₙ] частота слова w равна f(w) = |{ i : tᵢ = w }|
@@ -29,9 +31,9 @@ def count_freq(tokens: list[str]) -> dict[str, int]:
 
     for token in tokens:
         if token in result:
-            result[token]+=1
+            result[token] += 1
         else:
-            result[token]=1
+            result[token] = 1
 
     return result
 

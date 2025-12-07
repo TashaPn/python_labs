@@ -19,8 +19,8 @@ step = (first_2_index + 1) - first_index
 
 for i in range(first_index, len(start), step):
     end += start[i]
-    if start[i] == '.':  
+    if start[i] == ".":
         break
 
-print("in:",start)
-print("out:",end)
+print("in:", start)
+print("out:", end)

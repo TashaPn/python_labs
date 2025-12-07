@@ -4,23 +4,22 @@ def transpose(mat: list[list[float | int]]) -> list[list]:
     Если матрица «рваная» (строки разной длины) — ValueError.
     """
     result = []
-    
-    if len(mat)==0:
+
+    if len(mat) == 0:
         return []
-    
+
     check_len = len(mat[0])  # длина строки
-    height = len(mat)        # всего строк в матрице
+    height = len(mat)  # всего строк в матрице
 
     for m in mat:
-        if len(m)!=check_len:
+        if len(m) != check_len:
             raise ValueError
-
 
     for i in range(check_len):
         result.append([])
         for j in range(height):
             result[i].append(0)
-    
+
     for i in range(check_len):
         for j in range(height):
             result[i][j] = mat[j][i]
@@ -34,20 +33,20 @@ def row_sums(mat: list[list[float | int]]) -> list[float]:
     """
     result = []
 
-    if len(mat)==0:
+    if len(mat) == 0:
         return []
-    
+
     check_len = len(mat[0])  # длина строки
-    height = len(mat)        # всего строк в матрице
+    height = len(mat)  # всего строк в матрице
 
     for m in mat:
-        if len(m)!=check_len:
+        if len(m) != check_len:
             raise ValueError
-    
+
     for i in mat:
         summ = 0
         for j in i:
-            summ+=j
+            summ += j
         result.append(summ)
 
     return result

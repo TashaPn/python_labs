@@ -8,7 +8,7 @@ from lib.text import *
 
 def text_report(path: str | Path = None, encoding: str = "utf-8"):
     """
-    Читает один входной файл data/input.txt + Нормализует текст (lib/text.py), токенизирует и считает частоты слов 
+    Читает один входной файл data/input.txt + Нормализует текст (lib/text.py), токенизирует и считает частоты слов
     + Сохраняет data/report.csv c колонками: word,count, отсортированными: count ↓, слово ↑ (при равенстве)
     + В консоль печатает краткое резюме + если путь пустой -> выводим только заголовок в созданный файл
 
@@ -17,9 +17,9 @@ def text_report(path: str | Path = None, encoding: str = "utf-8"):
     enciding - кодировка
     """
     if path == None:
-        write_csv([],"data/lab04/report.csv", header=("word", "count"))
+        write_csv([], "data/lab04/report.csv", header=("word", "count"))
         return
-    
+
     p = read_text(path, encoding=encoding)
 
     norm = normalize(p)
@@ -46,7 +46,7 @@ def text_report(path: str | Path = None, encoding: str = "utf-8"):
 
 
 try:
-    #text_report("data/lab04/input-cp1251.txt", encoding="cp1251")
+    # text_report("data/lab04/input-cp1251.txt", encoding="cp1251")
     text_report("data/lab04/input.txt", encoding="utf-8")
 
 

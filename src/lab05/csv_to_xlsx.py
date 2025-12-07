@@ -14,8 +14,7 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     """
 
     p = Path(csv_path)
-    fp = p.open('r')
-
+    fp = p.open("r")
 
     csv_input = csv.reader(fp)
 
@@ -24,15 +23,14 @@ def csv_to_xlsx(csv_path: str, xlsx_path: str) -> None:
     for i in csv_input:
         result.append(i)
 
-    if len(result)==0:
+    if len(result) == 0:
         raise ValueError
-    
+
     wb = Workbook()
     ws = wb.active
     ws.title = "Sheet1"
 
     for strochka in result:
         ws.append(strochka)
-    
-    wb.save(xlsx_path)
 
+    wb.save(xlsx_path)

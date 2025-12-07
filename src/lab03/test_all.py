@@ -3,6 +3,7 @@ from lib.text import *
 
 text = "Aaa aa ++ gGa zzz ^))) !! a aAa jdsfhglkdfj ggA GGa\t\tn"
 
+
 def test_all():
     norm = normalize(text)
     tokens = tokenize(norm)

@@ -26,10 +26,17 @@ def test_transpose():
         result_transpose = t[1]
         result = transpose(input_transpose)
 
-        if result == result_transpose :
+        if result == result_transpose:
             print("Test passed, input=", input_transpose, "result=", result_transpose)
         else:
-            print("Test failed, input=", input_transpose, "result=", result, "result_transpose=", result_transpose)
+            print(
+                "Test failed, input=",
+                input_transpose,
+                "result=",
+                result,
+                "result_transpose=",
+                result_transpose,
+            )
 
 
 def test_transpose_error():
@@ -62,10 +69,17 @@ def test_row_sums():
         result_row_sums = t[1]
         result = row_sums(input_row_sums)
 
-        if result == result_row_sums :
+        if result == result_row_sums:
             print("Test passed, input=", input_row_sums, "result=", result_row_sums)
         else:
-            print("Test failed, input=", input_row_sums, "result=", result, "result_transpose=", result_row_sums)
+            print(
+                "Test failed, input=",
+                input_row_sums,
+                "result=",
+                result,
+                "result_transpose=",
+                result_row_sums,
+            )
 
 
 def test_error_row_sums():
@@ -98,10 +112,17 @@ def test_col_sums():
         test_result = t[1]
         result = col_sums(test_input)
 
-        if result == test_result :
+        if result == test_result:
             print("Test passed, input=", test_input, "result=", test_result)
         else:
-            print("Test failed, input=", test_input, "result=", result, "result_transpose=", test_result)
+            print(
+                "Test failed, input=",
+                test_input,
+                "result=",
+                result,
+                "result_transpose=",
+                test_result,
+            )
 
 
 def test_error_col_sums():

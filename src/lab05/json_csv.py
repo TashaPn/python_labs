@@ -6,29 +6,29 @@ from pathlib import Path
 
 from pathlib import Path
 
+
 def convert_json_to_csv(j: list) -> list:
     """
     Переводит данные, которые считали из json в формат для csv
     """
     result = []
-    result1 = []   # заголовок таблицы
+    result1 = []  # заголовок таблицы
 
     slovar = j[0]
-    if type(slovar)!= dict:
+    if type(slovar) != dict:
         raise ValueError
-    
+
     for key in slovar:
         result1.append(key)
-        
+
     result.append(result1)
-    
+
     # result == [
     #     ["A", "B", "C", "D"],  # заголовок
     # ]
 
-    
     for s in j:
-        if type(s)!= dict:
+        if type(s) != dict:
             raise ValueError
         result2 = []
         for key in result1:
@@ -37,21 +37,22 @@ def convert_json_to_csv(j: list) -> list:
                 value = ""
             result2.append(value)
         result.append(result2)
- 
+
     return result
 
-def convert_csv_to_json(csv_input:list)-> list:
+
+def convert_csv_to_json(csv_input: list) -> list:
     """
     csv_input - массив массивов, например:
-    
+
     csv_input = [
     ["33","22","11"],
     ["3","2","1"],
     ["один", "два", "три"]
     ]
-    
+
     в таком примере, result будет таким:
-    
+
     result = [
     {"33": "3",
      "22": "2",
@@ -63,19 +64,20 @@ def convert_csv_to_json(csv_input:list)-> list:
     },
     ]
     """
-    result = [] #конвертированный файл
+    result = []  # конвертированный файл
     stolbiki = csv_input[0]  #  ["33","22","11"]
 
-    slovar = {}                         # пустой
-    
-    for strochka in csv_input[1:]:      # ["3","2","1"] потом ["один", "два", "три"]
+    slovar = {}  # пустой
+
+    for strochka in csv_input[1:]:  # ["3","2","1"] потом ["один", "два", "три"]
         slovar = {}
-        for i in range(len(strochka)):   
-            slovar[stolbiki[i]] = strochka[i] 
-        
+        for i in range(len(strochka)):
+            slovar[stolbiki[i]] = strochka[i]
+
         result.append(slovar)
 
     return result
+
 
 def json_to_csv(json_path: str, csv_path: str) -> None:
     """
@@ -86,44 +88,42 @@ def json_to_csv(json_path: str, csv_path: str) -> None:
     json_path: путь до файла на диске, из которого мы читаем данные в формате json
     csv_path: путь до файла на диске, в который мы пишем данные в фомате csv
     """
-    
+
     p = Path(json_path)
 
-    # Загрузка напрямую из файла    
+    # Загрузка напрямую из файла
 
-    fp = p.open("r", encoding= "utf-8")
+    fp = p.open("r", encoding="utf-8")
 
-    
     json_f = None
     try:
         json_f = json.load(fp)
     except json.decoder.JSONDecodeError:
         raise ValueError("Пустой JSON или неподдерживаемая структура")
-    
+
     massive = None
     try:
         massive = convert_json_to_csv(json_f)
     except:
         raise ValueError
-    
+
     write_csv(massive, csv_path)
 
 
 def csv_to_json(csv_path: str, json_path: str) -> None:
-    """
-    """
+    """ """
     p = Path(csv_path)
     r = Path(json_path)
-    fp = p.open('r')
-    rf = r.open('w')
+    fp = p.open("r")
+    rf = r.open("w")
     csv_input = csv.reader(fp)
 
-    result = [] 
+    result = []
 
     for i in csv_input:
         result.append(i)
-    
-    if len(result)==0:
+
+    if len(result) == 0:
         raise ValueError
 
     try:
@@ -132,5 +132,3 @@ def csv_to_json(csv_path: str, json_path: str) -> None:
         raise ValueError
 
     json.dump(slovar, rf, indent=2)
-
-

@@ -12,10 +12,7 @@ def test_min_max():
             [42],
             (42, 42),
         ],
-        [
-            [-5, -2, -9],
-            (-9, -2)
-        ],
+        [[-5, -2, -9], (-9, -2)],
         [
             [1.5, 2, 2.0, -3.1],
             (-3.1, 2),
@@ -28,9 +25,23 @@ def test_min_max():
 
         result = min_max(test_input)
         if result != test_result:
-            print("Test failed, input=", test_input, "test_result=", test_result, "result=", result)
+            print(
+                "Test failed, input=",
+                test_input,
+                "test_result=",
+                test_result,
+                "result=",
+                result,
+            )
         else:
-            print("Test passed, input=", test_input, "test_result=", test_result, "result=", result)
+            print(
+                "Test passed, input=",
+                test_input,
+                "test_result=",
+                test_result,
+                "result=",
+                result,
+            )
 
 
 def test_min_max_error():
@@ -40,11 +51,10 @@ def test_min_max_error():
         print("Test passed, ValueError")
 
 
-
 def test_unique_sorted():
     tests = [
         [
-            [3, 1, 2, 1, 3], 
+            [3, 1, 2, 1, 3],
             [1, 2, 3],
         ],
         [
@@ -55,11 +65,7 @@ def test_unique_sorted():
             [-1, -1, 0, 2, 2],
             [-1, 0, 2],
         ],
-        [
-            [1.0, 1, 2.5, 2.5, 0],
-            [0, 1.0, 2.5]
-        ],
-
+        [[1.0, 1, 2.5, 2.5, 0], [0, 1.0, 2.5]],
     ]
 
     for t in tests:
@@ -70,11 +76,18 @@ def test_unique_sorted():
         if result == result_unique:
             print("Test passed, input=", start_unique, "result=", result_unique)
         else:
-            print("Test failed, input=", start_unique, "result=", result, "result_unique=", result_unique)
+            print(
+                "Test failed, input=",
+                start_unique,
+                "result=",
+                result,
+                "result_unique=",
+                result_unique,
+            )
 
- 
+
 def test_flatten():
-     
+
     tests = [
         [
             [[1, 2], [3, 4]],
@@ -88,7 +101,6 @@ def test_flatten():
             [[1], [], [2, 3]],
             [1, 2, 3],
         ],
-        
     ]
 
     for t in tests:
@@ -97,13 +109,20 @@ def test_flatten():
 
         result = flatten(input_flatten)
         if result == result_flatten:
-            print("Test passed, input=", input_flatten,"result=", result_flatten)
+            print("Test passed, input=", input_flatten, "result=", result_flatten)
         else:
-            print("Test failed, input=", input_flatten, "result=", result, "result_flatten=", result_flatten)
+            print(
+                "Test failed, input=",
+                input_flatten,
+                "result=",
+                result,
+                "result_flatten=",
+                result_flatten,
+            )
 
 
 def test_flatten_error():
-    try: 
+    try:
         flatten([[1, 2], "ab"])
     except TypeError:
         print("Test passed")
@@ -121,4 +140,3 @@ test_unique_sorted()
 print("TEST FLATTEN")
 test_flatten()
 test_flatten_error()
-
