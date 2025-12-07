@@ -1,4 +1,4 @@
-from tuples import format_record
+from src.lab02.tuples import format_record
 
 
 def test_format_record():

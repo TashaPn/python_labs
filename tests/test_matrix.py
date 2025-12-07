@@ -1,4 +1,4 @@
-from matrix import transpose, row_sums, col_sums
+from src.lab02.matrix import transpose, row_sums, col_sums
 
 
 def test_transpose():
@@ -133,13 +133,3 @@ def test_error_col_sums():
     else:
         print("Test failed")
 
-
-print("TEST TRANSPOSE")
-test_transpose()
-test_transpose_error()
-print("TEST ROW_SUMS")
-test_row_sums()
-test_error_row_sums()
-print("TEST COL_SUMS")
-test_col_sums()
-test_error_col_sums()

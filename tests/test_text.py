@@ -1,4 +1,4 @@
-from lib.text import *
+from src.lib.text import *
 
 
 text = "Aaa aa ++ gGa zzz ^))) !! a aAa jdsfhglkdfj ggA GGa\t\tn"

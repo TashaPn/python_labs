@@ -1,4 +1,4 @@
-from lib.text import count_freq
+from src.lib.text import count_freq
 
 
 def test_count_freq_1():

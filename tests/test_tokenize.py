@@ -1,4 +1,4 @@
-from lib.text import tokenize
+from src.lib.text import tokenize
 
 
 def test_tokenize_1():

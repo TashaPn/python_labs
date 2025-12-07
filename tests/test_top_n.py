@@ -1,4 +1,4 @@
-from lib.text import top_n
+from src.lib.text import top_n
 
 
 def test_top_n_1():

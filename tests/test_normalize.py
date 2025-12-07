@@ -1,4 +1,4 @@
-from lib.text import normalize
+from src.lib.text import normalize
 
 
 def test_normalize_1():

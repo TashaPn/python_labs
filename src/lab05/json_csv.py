@@ -1,7 +1,7 @@
 import json
 import csv
 
-from lab04.io_txt_csv import write_csv
+from src.lab04.io_txt_csv import write_csv
 from pathlib import Path
 
 from pathlib import Path

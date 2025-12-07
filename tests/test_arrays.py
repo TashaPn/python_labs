@@ -1,4 +1,4 @@
-from arrays import min_max, unique_sorted, flatten
+from src.lab02.arrays import min_max, unique_sorted, flatten
 
 
 def test_min_max():
@@ -129,14 +129,3 @@ def test_flatten_error():
     else:
         print("Test failed")
 
-
-print("TEST MIN-MAX")
-test_min_max()
-test_min_max_error()
-
-print("TEST UNIQUE-SORTED")
-test_unique_sorted()
-
-print("TEST FLATTEN")
-test_flatten()
-test_flatten_error()
