@@ -1,0 +1,14 @@
+[
+  {
+    "fio": "Petr",
+    "birthdate": "1982-11-24",
+    "gpa": 4,
+    "group": "SE-01"
+  },
+  {
+    "fio": "Vasya",
+    "birthdate": "1982-12-22",
+    "gpa": 2.22,
+    "group": "SE-02"
+  }
+]

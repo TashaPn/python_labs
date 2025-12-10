@@ -1,0 +1,14 @@
+[
+  {
+    "fio": "Anna",
+    "birthdate": "2005-09-24",
+    "gpa": 4,
+    "group": "SE-06"
+  },
+  {
+    "fio": "Olga",
+    "birthdate": "1999-12-22",
+    "gpa": 1.08,
+    "group": "SE-01"
+  }
+]
