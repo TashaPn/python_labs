@@ -39,7 +39,3 @@ def students_from_json(path):
             result.append(new_student)
         
     return result
-
-
-students = students_from_json("src/lab08/students_input.json")
-print(students)
