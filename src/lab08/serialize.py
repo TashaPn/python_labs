@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 from src.lab08.models import Student
 
+
 def students_to_json(students, path):
     """
     TBD To be done
@@ -37,5 +38,5 @@ def students_from_json(path):
         for one_student_dict in studen_dicts:
             new_student = Student.from_dict(one_student_dict)
             result.append(new_student)
-        
+
     return result

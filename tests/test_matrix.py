@@ -132,4 +132,3 @@ def test_error_col_sums():
         print("Test passed, ValueError")
     else:
         print("Test failed")
-

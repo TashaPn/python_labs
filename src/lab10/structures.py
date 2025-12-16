@@ -18,7 +18,7 @@ class Stack:
         if len(self._data) == 0:
             raise IndexError("стек пустой")
         result = self._data[-1]
-        del(self._data[-1])
+        del self._data[-1]
         return result
 
     def peek(self):
@@ -37,14 +37,14 @@ class Stack:
         if len(self._data) == 0:
             return True
         return False
-    
+
     def __len__(self) -> int:
         """
         возвращает количество элементов в стеке
         работает, когда делают len(st)
         """
         return len(self._data)
-    
+
 
 class Queue:
     def __init__(self):
@@ -55,7 +55,7 @@ class Queue:
 
     def enqueue(self, item):
         """
-        вставка элемента в конец очереди 
+        вставка элемента в конец очереди
         """
         self._data.insert(0, item)
 
@@ -66,7 +66,7 @@ class Queue:
         if len(self._data) == 0:
             raise IndexError("очередь пустая")
         result = self._data[-1]
-        del(self._data[-1])
+        del self._data[-1]
         return result
 
     def peek(self):
@@ -85,7 +85,7 @@ class Queue:
         if len(self._data) == 0:
             return True
         return False
-    
+
     def __len__(self) -> int:
         """
         возвращает количество элементов в очереди

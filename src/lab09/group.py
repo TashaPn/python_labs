@@ -22,7 +22,7 @@ class Group:
         """
         with path.open("w", newline="", encoding="utf-8") as fp:
             w = csv.writer(fp, delimiter=",")
-            header = ["fio","birthdate","group","gpa"]
+            header = ["fio", "birthdate", "group", "gpa"]
             w.writerow(header)
 
     def _read_all(self):
@@ -43,7 +43,7 @@ class Group:
         # Вот здесь проверяем, что первая строка файла tmp_students содержит заголовок
         # Если нет, raise ValueError
 
-        if tmp_students[0] != ["fio","birthdate","group","gpa"]:
+        if tmp_students[0] != ["fio", "birthdate", "group", "gpa"]:
             raise ValueError("неправильный формат файла")
 
         for student_data in tmp_students[1:]:
@@ -52,10 +52,10 @@ class Group:
             birthdate = student_data[1]
             group = student_data[2]
             gpa = float(student_data[3])
-            
+
             student = Student(fio, birthdate, group, gpa)
             self.students.append(student)
-  
+
     def list(self):
         """
         функция возвращает список студентов
@@ -78,7 +78,6 @@ class Group:
                 result.append(s)
 
         return result
-                   
 
     def remove(self, fio: str):
         """
@@ -102,4 +101,3 @@ class Group:
                 if "gpa" in fields:
                     student.gpa = fields["gpa"]
                 break
-

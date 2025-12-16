@@ -128,4 +128,3 @@ def test_flatten_error():
         print("Test passed")
     else:
         print("Test failed")
-

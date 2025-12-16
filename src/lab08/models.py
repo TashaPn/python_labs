@@ -4,42 +4,42 @@ from datetime import datetime
 
 @dataclass
 class Student:
-    fio: str                  # ФИО студента
-    birthdate: str            # Формат YYYY-MM-DD
-    group: str                # Группа, напр. SE-01
-    gpa: float                # Средний балл 0…5
+    fio: str  # ФИО студента
+    birthdate: str  # Формат YYYY-MM-DD
+    group: str  # Группа, напр. SE-01
+    gpa: float  # Средний балл 0…5
 
     def age(self) -> int:
-        '''
+        """
         количество прожитых дней = дата рождения - текущая дата
         количество прожитых лет = количество прожитых дней / 365.25 (потому что бывают високосные года)
         int(количество прожитых лет)
-        '''
+        """
         now = datetime.now()
         birthday = datetime.strptime(self.birthdate, "%Y-%m-%d")
         age = now - birthday
-        result = int(age.days/365.25)
+        result = int(age.days / 365.25)
         return result
-    
+
     def __str__(self) -> str:
         """
         красиво выводит значения, когда класс печатают на print
         """
-        return f"{self.fio} {self.group} {self.gpa}" 
-    
+        return f"{self.fio} {self.group} {self.gpa}"
+
     def __post_init__(self):
         """
         Этот метод используется для проверки полей класса
         """
-        if 0>self.gpa or self.gpa>5:
+        if 0 > self.gpa or self.gpa > 5:
             raise ValueError("значение gpa должно быть от 0 до 5 включительно")
-        
+
         try:
             datetime.strptime(self.birthdate, "%Y-%m-%d")
 
         except ValueError:
             raise ValueError("неверный формат даты рождения, должен быть YYYY-MM-DD")
-        
+
     def to_dict(self) -> dict:
         return {
             "fio": self.fio,
