@@ -6,6 +6,6 @@
 * [Лабораторная работа 6 :cherry_blossom:](src/lab06/README.md)
 * [Лабораторная работа 7 :hibiscus:](src/lab07/README.md)
 * [Лабораторная работа 8 :tulip:](src/lab08/README.md)
-* [Лабораторная работа 9 :ribbon:](src/lab09/README.md)
-* [Лабораторная работа 10 :squid:](src/lab10/README.md)
+* [Лабораторная работа 9 :squid:](src/lab09/README.md)
+* [Лабораторная работа 10 :ribbon:](src/lab10/README.md)
 
