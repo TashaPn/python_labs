@@ -353,8 +353,11 @@ def test_remove_invalid_node(si):
     assert len(si) == 3
 ```
 ![](/images/Lab_10/test1.PNG)      ![](/images/Lab_10/test2.PNG)
+
+
 ![](/images/Lab_10/Снимок.PNG)
 
 
 
-![](../../images/cat.gif)          ## Спасибо за внимание и просмотр всех моих лаб :3
+![](../../images/cat.gif)         
+## Спасибо за внимание и просмотр всех моих лаб :3
